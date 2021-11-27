@@ -4,6 +4,10 @@ var instructions = document.getElementById("instructions");
 var countdownEl = document.getElementById("countdown");
 var section = document.querySelector(".questions");
 var uno = document.querySelector(".uno");
+var dos = document.querySelector(".dos");
+var tres = document.querySelector(".tres");
+var quatro = document.querySelector(".quatro");
+var cinco = document.querySelector(".cinco");
 
 var myCountdown;
 function countdown() {
@@ -20,27 +24,77 @@ function countdown() {
             } else {
                 countdownEl.textContent = '';
                 clearInterval(timeInterval);
+
         }
     }, 1000);
   }
+  
 var changeElements = function () {
     startQuiz.classList.add ("hidden")
     title.classList.add ("hidden")
     instructions.classList.add ("hidden")
     section.classList.remove ("hidden")
     uno.classList.remove ("hidden")
+    
 countdown()
 }
 
-function quizLogic(e) {
-    if (e.target.matches(".correct")) {
+//////////////////////
+
+function secondQuestion(e) {
+    if (e.target.matches(".correct-uno")) {
         console.log ("correct answer")
+        uno.classList.add ("hidden")
+        dos.classList.remove ("hidden")
     } else {
         console.log ("wrong answer")
-        countdownEl--;
+        
     }
 }
-section.addEventListener ("click",quizLogic)
+section.addEventListener ("click",secondQuestion)
 
+//////////////////////
+
+function thirdQuestion(e) {
+    if (e.target.matches(".correct-dos")) {
+        console.log ("correct answer")
+        dos.classList.add ("hidden")
+        tres.classList.remove ("hidden")
+    } else {
+        console.log ("wrong answer")
+        
+    }
+}
+section.addEventListener ("click",thirdQuestion)
+
+//////////////////////
+
+function fourthQuestion(e) {
+    if (e.target.matches(".correct-tres")) {
+        console.log ("correct answer")
+        tres.classList.add ("hidden")
+        quatro.classList.remove ("hidden")
+    } else {
+        console.log ("wrong answer")
+        
+    }
+}
+section.addEventListener ("click",fourthQuestion)
+
+//////////////////////
+
+function fifthQuestion(e) {
+    if (e.target.matches(".correct-quatro")) {
+        console.log ("correct answer")
+        quatro.classList.add ("hidden")
+        cinco.classList.remove ("hidden")
+    } else {
+        console.log ("wrong answer")
+        
+    }
+}
+section.addEventListener ("click",fifthQuestion)
+
+//////////////////////
 
 startQuiz.addEventListener ("click",changeElements) 

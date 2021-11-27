@@ -8,6 +8,8 @@ var dos = document.querySelector(".dos");
 var tres = document.querySelector(".tres");
 var quatro = document.querySelector(".quatro");
 var cinco = document.querySelector(".cinco");
+var finishQuiz = document.querySelector(".finishQuiz");
+var highScore = document.querySelector(".highScore");
 
 var myCountdown;
 function countdown() {
@@ -47,7 +49,6 @@ function secondQuestion(e) {
         uno.classList.add ("hidden")
         dos.classList.remove ("hidden")
     } else {
-        console.log ("wrong answer")
         
     }
 }
@@ -61,7 +62,6 @@ function thirdQuestion(e) {
         dos.classList.add ("hidden")
         tres.classList.remove ("hidden")
     } else {
-        console.log ("wrong answer")
         
     }
 }
@@ -75,7 +75,6 @@ function fourthQuestion(e) {
         tres.classList.add ("hidden")
         quatro.classList.remove ("hidden")
     } else {
-        console.log ("wrong answer")
         
     }
 }
@@ -89,12 +88,22 @@ function fifthQuestion(e) {
         quatro.classList.add ("hidden")
         cinco.classList.remove ("hidden")
     } else {
-        console.log ("wrong answer")
         
     }
 }
 section.addEventListener ("click",fifthQuestion)
 
 //////////////////////
+
+function finishQuiz(e) {
+    if (e.target.matches(".correct-cinco")) {
+        console.log ("correct answer")
+        cinco.classList.add ("hidden")
+        finishQuiz.classList.remove ("hidden")
+    } else {
+
+    }
+}
+section.addEventListener ("click",finishQuiz)
 
 startQuiz.addEventListener ("click",changeElements) 

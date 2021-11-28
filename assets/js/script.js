@@ -62,8 +62,8 @@ function thirdQuestion(e) {
         dos.classList.add ("hidden")
         tres.classList.remove ("hidden")
     } else {
-        
-    }
+    
+    }   
 }
 section.addEventListener ("click",thirdQuestion)
 
@@ -105,5 +105,17 @@ function finishQuiz(e) {
     }
 }
 section.addEventListener ("click",finishQuiz)
+//////////////////////
+
+function highScore(e) {
+    if (e.target.matches(".correct-cinco")) {
+        console.log ("correct answer")
+        finishQuiz.classList.add ("hidden")
+        highScore.classList.remove ("hidden")
+    } else {
+
+    }
+}
+section.addEventListener ("click",highScore)
 
 startQuiz.addEventListener ("click",changeElements) 
